@@ -5,7 +5,7 @@ $(function(){
        arrows : true, 
        dots : true,
        autoplay : true,
-       autoplaySpeed : 3000, 
+       autoplaySpeed : 3500, 
        pauseOnHover : true, //마우스를 올려두면 동작 일시정지
      });//lazy slick
 
@@ -15,7 +15,7 @@ $(function(){
        arrows : false, 
        dots : false,
        autoplay : true,
-       autoplaySpeed : 1000, 
+       autoplaySpeed : 3000, 
        pauseOnHover : true, //마우스를 올려두면 동작 일시정지
    })//공지사항 자동올림
 
@@ -27,7 +27,8 @@ $(function(){
        dots: false,
        fade: true,
        autoplay : true,
-       autoplaySpeed : 3000,
+       autoplaySpeed : 3500,
+       pauseOnHover : true,
        asNavFor: '.slider-nav'
        });
        $('.slider-nav').slick({
@@ -36,7 +37,8 @@ $(function(){
        asNavFor: '.slider-for',
        dots: true,
        arrows: true,
-       focusOnSelect: true
+       focusOnSelect: true,
+       pauseOnHover : true,
        });
 
 // 하단배너 슬릭
@@ -46,12 +48,14 @@ $(function(){
            autoplay : true,
            dots: true,
            arrows: false,
+           pauseOnHover : true,
        });
 
        $('.multiple-items').slick({
        infinite: true,
        slidesToShow: 4,
        slidesToScroll: 2,
+       pauseOnHover : true,
        });
 
 //사이트맵, 언어 클릭 
@@ -73,13 +77,24 @@ var sta_lang = 0
   // alert(src_off+src_on)
   $('#header .head_btn .site_map').click(function(){
     if(sta_site == 0){
-    $('#header .pop_up').css({display:'block'});
+    $('#header .pop_up').css({'display':'block' , 'transition':500});
+    // $('#header .pop_up').fadeIn();
     $('#header .site_map img').attr('src','images_icon/ic_sitemap_on.png');
     sta_site = 1
     }else{
       $('#header .pop_up').css({display:'none'});
-      $('#header .head_btn .site_map img').attr('src','images_icon/ic_sitemap_off.png');
+      // $('#header .pop_up').fadeOut();
+      $('#header .head_btn .site_map img').attr('src','images_icon/ic_sitemap.png');
     sta_site = 0 
    }
   })//click02
+
+  // alert(src_off+src_on)
+  // $('#quick .board_txt img').mouseenter(function(){
+  //   $('#quick .board_txt img:nth-child(1)').attr('src','images_icon/ic_review_h.png');
+  //   $('#quick .board_txt img:nth-child(2)').attr('src','images_icon/ic_photo_h.png');
+  //   $('#quick .board_txt img:nth-child(3)').attr('src','images_icon/ic_free-comunity_h.png');
+  //   $('#quick .board_txt img:nth-child(4)').attr('src','images_icon/ic_news_h.png');
+
+  //  })
 })//ready
